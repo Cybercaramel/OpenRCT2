@@ -847,5 +847,6 @@ bool ride_has_any_track_elements(int rideIndex);
 void ride_all_has_any_track_elements(bool *rideIndexArray);
 
 void sub_6C84CE();
+void sub_6C96C0();
 
 #endif
