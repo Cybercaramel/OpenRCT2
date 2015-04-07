@@ -123,4 +123,7 @@ int viewport_interaction_right_over(int x, int y);
 int viewport_interaction_right_click(int x, int y);
 void sub_68A15E(int screenX, int screenY, short *x, short *y, int *direction, rct_map_element **mapElement);
 
+void sub_0x68615B(int ebp);
+void sub_688485();
+
 #endif
