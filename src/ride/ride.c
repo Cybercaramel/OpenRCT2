@@ -4710,3 +4710,36 @@ void ride_all_has_any_track_elements(bool *rideIndexArray)
 		rideIndexArray[it.element->properties.track.ride_index] = true;
 	}
 }
+
+/**
+ *
+ * rct2: 0x006CA28C
+ */
+money32 ride_get_entrance_or_exit_price(int rideIndex, int x, int y, int direction, int dl, int di)
+{
+	int eax, ebx, ecx, edx, esi, edi, ebp;
+	eax = x;
+	ebx = direction << 8;
+	ecx = y;
+	edx = rideIndex | (dl << 8);
+	edi = di;
+	RCT2_CALLFUNC_X(0x006CA28C, &eax, &ebx, &ecx, &edx, &esi, &edi, &ebp);
+	return ebx;
+
+}
+
+/**
+ * 
+ * rct2: 0x006CCF70
+ */
+void ride_get_entrance_or_exit_position_from_screen_position(int x, int y, int *outX, int *outY, int *outDirection)
+{
+	int eax, ebx, ecx, edx, esi, edi, ebp;
+	eax = x;
+	ebx = y;
+	RCT2_CALLFUNC_X(0x006CCF70, &eax, &ebx, &ecx, &edx, &esi, &edi, &ebp);
+	
+	if (outX != NULL) *outX = eax & 0xFFFF;
+	if (outY != NULL) *outY = ecx & 0xFFFF;
+	if (outDirection != NULL) *outDirection = ebx & 0xFF;
+}

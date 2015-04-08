@@ -2715,3 +2715,24 @@ void map_element_remove_banner_entry(rct_map_element *mapElement)
 		user_string_free(banner->string_idx);
 	}
 }
+
+int map_get_highest_z(int tileX, int tileY)
+{
+	rct_map_element *mapElement;
+	int z;
+
+	mapElement = map_get_surface_element_at(tileX, tileY);
+	if (mapElement == NULL)
+		return -1;
+
+	z = mapElement->base_height * 8;
+
+	// Raise z so that is above highest point of land and water on tile
+	if ((mapElement->properties.surface.slope & 0x0F) != 0)
+		z += 16;
+	if ((mapElement->properties.surface.slope & 0x10) != 0)
+		z += 16;
+
+	z = max(z, (mapElement->properties.surface.terrain & 0x1F) * 16);
+	return z;
+}

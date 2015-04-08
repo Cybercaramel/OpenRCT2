@@ -860,5 +860,7 @@ void ride_all_has_any_track_elements(bool *rideIndexArray);
 
 void sub_6C84CE();
 void sub_6C96C0();
+money32 ride_get_entrance_or_exit_price(int rideIndex, int x, int y, int direction, int dl, int di);
+void ride_get_entrance_or_exit_position_from_screen_position(int x, int y, int *outX, int *outY, int *outDirection);
 
 #endif
