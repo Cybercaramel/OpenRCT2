@@ -76,7 +76,7 @@ static const uint8 _magicMountainScript[] = {
 	RESTART(),
 };
 
-static const uint8* _loadedScript;
+static uint8* _loadedScript;
 static const uint8* _currentScript;
 static int _scriptNoLoadsSinceRestart;
 static int _scriptWaitCounter;
