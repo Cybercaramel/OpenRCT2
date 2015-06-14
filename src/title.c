@@ -52,6 +52,7 @@ enum {
 	TITLE_SCRIPT_LOADMM,
 	TITLE_SCRIPT_LOCATION,
 	TITLE_SCRIPT_ROTATE,
+	TITLE_SCRIPT_ZOOM,
 	TITLE_SCRIPT_RESTART,
 	TITLE_SCRIPT_LOAD
 };
@@ -60,6 +61,7 @@ enum {
 #define LOADMM()			TITLE_SCRIPT_LOADMM
 #define LOCATION(x, y)		TITLE_SCRIPT_LOCATION, x, y
 #define ROTATE(n)			TITLE_SCRIPT_ROTATE, n
+#define ZOOM(d)				TITLE_SCRIPT_ZOOM, d
 #define RESTART()			TITLE_SCRIPT_RESTART
 #define LOAD(i)				TITLE_SCRIPT_LOAD, i
 
@@ -294,6 +296,12 @@ static void title_do_next_script_opcode()
 			for (i = 0; i < script_operand; i++)
 				window_rotate_camera(w);
 		break;
+	case TITLE_SCRIPT_ZOOM:
+		script_operand = (*_currentScript++);
+		w = window_get_main();
+		if (w != NULL && w->viewport != NULL)
+			window_zoom_set(w, script_operand);
+		break;
 	case TITLE_SCRIPT_RESTART:
 		_scriptNoLoadsSinceRestart = 1;
 		_currentScript = _loadedScript;
@@ -516,6 +524,9 @@ static uint8 *title_script_load()
 				*scriptPtr++ = atoi(part2) & 0xFF;
 			} else if (_stricmp(token, "ROTATE") == 0) {
 				*scriptPtr++ = TITLE_SCRIPT_ROTATE;
+				*scriptPtr++ = atoi(part1) & 0xFF;
+			} else if (_stricmp(token, "ZOOM") == 0) {
+				*scriptPtr++ = TITLE_SCRIPT_ZOOM;
 				*scriptPtr++ = atoi(part1) & 0xFF;
 			} else if (_stricmp(token, "WAIT") == 0) {
 				*scriptPtr++ = TITLE_SCRIPT_WAIT;
