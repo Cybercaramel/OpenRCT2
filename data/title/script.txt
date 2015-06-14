@@ -1,14 +1,13 @@
 # OpenRCT2 0.0.2 Title Sequence Script
-# WORK IN PROGRESS
-#  ...more to be included and timings to be tweaked
+# Arranged by IntelOrca
 
-# Kenton (PFCKrutonium)
+# PFCKrutonium
 LOAD pfckrutonium1.sv6
-LOCATION 3 29
-WAIT 17
-LOCATION 59 26
+LOCATION 7 41
+WAIT 15
+LOCATION 49 15
 ROTATE 1
-WAIT 8
+WAIT 10
 
 # Achilleshiel
 LOAD achilleshiel.sv6
@@ -23,21 +22,20 @@ LOCATION 64 40
 ROTATE 1
 WAIT 8
 
-# pfckrutonium
+# PFCKrutonium
 LOAD pfckrutonium2.sv6
 LOCATION 116 58
-ROTATE 1
 WAIT 14
 
 ROTATE 1
 WAIT 12
 
-# shotguns
+# Shotguns (http://www.nedesigns.com/park/3107/rougarou/)
 LOAD shotguns.sv6
 LOCATION 20 13
 WAIT 16
 
-# faas
+# Faas (http://www.nedesigns.com/park/2996/lucky-lake-amusement-park/)
 LOAD faas.sv6
 LOCATION 42 11
 WAIT 10
@@ -53,8 +51,8 @@ WAIT 12
 LOCATION 88 68
 WAIT 12
 
-# poke1
-LOAD poke1.sv6
+# MCI (http://www.nedesigns.com/park/2973/maerchen-paradies/)
+LOAD mci.sv6
 LOCATION 46 60
 WAIT 16
 
@@ -66,7 +64,7 @@ LOCATION 76 32
 ROTATE 1
 WAIT 8
 
-# rid6
+# Ride6 (http://www.nedesigns.com/park/2545/banana-valley/)
 LOAD rid6.sv6
 LOCATION 56 34
 WAIT 10
@@ -76,4 +74,17 @@ WAIT 4
 
 LOCATION 10 29
 ROTATE 1
-WAIT 8
+WAIT 12
+
+# Poke (http://www.nedesigns.com/park/2967/mystic-mountain/)
+LOAD poke.sv6
+LOCATION 43 83
+WAIT 16
+
+LOCATION 63 35
+ROTATE 3
+WAIT 12
+
+LOCATION 12 47
+ROTATE 3
+WAIT 20
