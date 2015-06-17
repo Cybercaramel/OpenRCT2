@@ -947,7 +947,7 @@ int sub_6C683D_head(int* x, int* y, int* z, int direction, int type, uint16 extr
  * colourRelated: si
  * outElement: [ax, cx, edi]
  */
-bool sub_6C683D_ted(int x, int y, int z, int direction, int type, int flags, int colourRelated, rct_xy_element *outElement)
+bool sub_6C683D(int x, int y, int z, int direction, int type, int flags, int colourRelated, rct_xy_element *outElement)
 {
 	// int ebx = (direction << 8) | type;
 	// return RCT2_CALLFUNC_X(0x006C683D, x, &ebx, y, &z, &esi, &edi, &ebp)&0x100;

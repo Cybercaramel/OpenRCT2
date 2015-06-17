@@ -816,6 +816,7 @@ void ride_breakdown_add_news_item(int rideIndex);
 rct_peep *ride_find_closest_mechanic(rct_ride *ride, int forInspection);
 int sub_6CC3FB(int rideIndex);
 void sub_6C9627();
+int sub_6C683D_head(int* x, int* y, int* z, int direction, int type, uint16 extra_params, rct_map_element** output_element, uint16 flags);
 bool sub_6C683D(int x, int y, int z, int direction, int type, int flags, int colourRelated, rct_xy_element *outElement);
 void ride_set_map_tooltip(rct_map_element *mapElement);
 int ride_music_params_update(sint16 x, sint16 y, sint16 z, uint8 rideIndex, uint16 sampleRate, uint32 position, uint8 *tuneId);
